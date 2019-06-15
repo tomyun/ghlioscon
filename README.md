@@ -25,3 +25,6 @@
 ### Clone Hero
 Only works with [0.21.6](https://clonehero.net/releases/v0.21.6/) for now
 ![Clone Hero](https://i.imgur.com/ljdyeNg.png)
+
+### Guitar Freaks (MAME)
+![Guitar Freaks](https://i.imgur.com/19z8gKg.png)

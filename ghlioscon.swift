@@ -68,9 +68,10 @@ class VirtualDriver {
     let FOOHID_SEND:    UInt32 = 2
 
     let DEVICE_NAME = "Guitar Hero Live iOS Controller"
-    let DEVICE_SN = "20190614"
+    let DEVICE_SN = "20190616"
     let VENDOR_ID = 0x0000
     let PRODUCT_ID = 0x0000
+    let LOCATION_ID = 0xFFFFFFFF
 
     var connect: io_connect_t = 0
     var runLoop: CFRunLoop!
@@ -112,7 +113,8 @@ class VirtualDriver {
                 unsafeBitCast(strdup(DEVICE_SN), to: UInt64.self),
                 UInt64(DEVICE_SN.utf8.count),
                 UInt64(VENDOR_ID),
-                UInt64(PRODUCT_ID)
+                UInt64(PRODUCT_ID),
+                UInt64(LOCATION_ID)
             ]
             guard IOConnectCallScalarMethod(connect, FOOHID_CREATE, input, UInt32(input.count), nil, nil) == KERN_SUCCESS
             else {
